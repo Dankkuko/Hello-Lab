@@ -1,5 +1,5 @@
-import logo from '../hellolab.png';
-import imgPath from '../default.png';
+import logo from '../../components/views/hellolab.png';
+import imgPath from '../../components/views/default.png';
 import './MenuBar.css';
 import {useRef, useEffect, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
