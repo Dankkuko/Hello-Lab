@@ -12,7 +12,14 @@ import NoticePage from "./components/views/NoticePage/NoticePage";
 import SearchPage from "./components/views/SearchPage/SearchPage";
 import MyPage from "./components/views/MyPage/MyPage";
 import LabPage from "./components/views/LabPage/LabPage";
-import MenuBar from "./components/views/MenuBar/MenuBar";
+import LabAsk from "./components/views/LabPage/tabs/LabAsk";
+import LabCal from "./components/views/LabPage/tabs/LabCal";
+import LabInfo from "./components/views/LabPage/tabs/LabInfo";
+import LabNotice from "./components/views/LabPage/tabs/LabNotice";
+import LabProject from "./components/views/LabPage/tabs/LabProject";
+import LabSession from "./components/views/LabPage/tabs/LabSession";
+
+import MenuBar from "./components/MenuBar/MenuBar";
 
 function App() {
 
@@ -37,6 +44,12 @@ function App() {
           <Route exact path="/search" component={SearchPage} />
           <Route exact path="/mypage" component={MyPage} />
           <Route exact path="/lab" component={LabPage} />
+          <Route exact path="/lab/info" component={LabInfo} />
+          <Route exact path="/lab/notice" component={LabNotice} />
+          <Route exact path="/lab/calendar" component={LabCal} />
+          <Route exact path="/lab/project" component={LabProject} />
+          <Route exact path="/lab/session" component={LabSession} />
+          <Route exact path="/lab/ask" component={LabAsk} />
         </Switch>
       </div>
     </Router>
