@@ -1,0 +1,26 @@
+#lab-bar{
+    width: 200px;
+    box-shadow: none;
+    padding-left: 80px;
+}
+
+#lab-ul{
+    width: 200px;
+}
+
+.tab{
+    background-color:white !important;
+}
+
+.tab:hover, 
+.tab:active{
+    background-color:rgb(196, 196, 196) !important;
+    color: black !important;
+}
+
+.tab-link{
+    color: black !important;
+}
+.tab-title{
+    padding-left: 10px;
+}
