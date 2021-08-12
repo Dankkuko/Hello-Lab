@@ -43,13 +43,13 @@ function App() {
           <Route exact path="/notice" component={NoticePage} />
           <Route exact path="/search" component={SearchPage} />
           <Route exact path="/mypage" component={MyPage} />
-          <Route exact path="/lab" component={LabPage} />
-          <Route exact path="/lab/info" component={LabInfo} />
-          <Route exact path="/lab/notice" component={LabNotice} />
-          <Route exact path="/lab/calendar" component={LabCal} />
-          <Route exact path="/lab/project" component={LabProject} />
-          <Route exact path="/lab/session" component={LabSession} />
-          <Route exact path="/lab/ask" component={LabAsk} />
+          <Route exact path="/lab/:id" component={LabPage} />
+          <Route exact path="/lab/:id/info" component={LabInfo} />
+          <Route exact path="/lab/:id/notice" component={LabNotice} />
+          <Route exact path="/lab/:id/calendar" component={LabCal} />
+          <Route exact path="/lab/:id/project" component={LabProject} />
+          <Route exact path="/lab/:id/session" component={LabSession} />
+          <Route exact path="/lab/:id/ask" component={LabAsk} />
         </Switch>
       </div>
     </Router>
