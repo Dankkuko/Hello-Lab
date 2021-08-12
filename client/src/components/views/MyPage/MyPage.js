@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import axios from "axios";
-import { withRouter } from 'react-router-dom';
+import { useHistory, withRouter } from 'react-router-dom';
 import './MyPage.css';
 import '../views.css';
 
@@ -25,11 +25,14 @@ const labs = [
     }
 ];
 
-function MyPage(props) {
+function MyPage() {
+    const history = useHistory();
 
-    const onDashboardHandler = (event) => {
-        console.log(event.target);
-        props.history.push('/lab');
+    const onDashboardHandler = (section) => {
+        history.push({
+            pathname: `/lab/${section.id}`,
+            state: {id: section.id}
+        });
         // 실제 동작 시 lab 페이지로 정보 넘겨줘야 함
         // lab 페이지는 정보 받아서 해당 lab 페이지 출력해야 함
     }
@@ -52,9 +55,9 @@ function MyPage(props) {
             <div id="my_lab">
                 <h2><span>내 연구실</span></h2>
                 <ul id="lab_list">
-                    {labs.map((section, index) => (
-                        <li>
-                            <div onClick={onDashboardHandler} className="dashboard_card">
+                    {labs.map((section) => (
+                        <li key={section.id}>
+                            <div onClick={() => onDashboardHandler(section)} className="dashboard_card">
                                 <img className="lab_img" src={section.imgPath}/>
                                 <p className="lab_name">{section.name} 연구실</p>
                                 <p className="prof">{section.prof} 교수</p>
