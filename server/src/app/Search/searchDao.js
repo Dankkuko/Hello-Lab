@@ -1,3 +1,4 @@
+//검색한 게시판 정보 가져오는 쿼리문
 async function debateInfo(connection, condition) {
     const debateInfoQuery = `
         select l.title '제목',LEFT(l.content, 30), coalesce(p.name, s.name) '작성자', l.createdAt '작성 날짜'
