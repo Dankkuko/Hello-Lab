@@ -1,5 +1,6 @@
 const { studentAuth } = require("../../middleware/studentAuth");
 const { professorAuth } = require("../../middleware/professorAuth");
+const { userAuth } = require("../../middleware/userAuth");
 
 module.exports = function (app) {
   const controller = require("./labController");
@@ -27,7 +28,9 @@ module.exports = function (app) {
   );
 
   // test
-  app.get("/test", studentAuth, (req, res) => {
-    return res.send("통과");
+  app.get("/test", (req, res) => {
+    const plz = req.cookies;
+    console.log(plz);
+    return res.send(plz);
   });
 };

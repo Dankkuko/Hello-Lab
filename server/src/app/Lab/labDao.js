@@ -35,6 +35,11 @@ const joinLabRequestQuery = `INSERT INTO LabJoinRequest(userId, labId) VALUES(?,
 const updateJoinLabQuery = `UPDATE LabJoinRequest SET status = 1 WHERE Id = ?`;
 const getNotieOfRequest = `SELECT r.userId, r.labId FROM LabJoinRequest r WHERE id = ?`;
 const insertStudentLabQeury = `INSERT INTO UserLab(userId, labId) VALUES(?, ?) `;
+const getUserInfoByUserIdQuery = `
+SELECT name, major, userNum, phoneNum
+FROM User
+WHERE id = ?, status = 0
+`;
 
 module.exports = {
   InsertLabInfoQuery,
@@ -46,4 +51,5 @@ module.exports = {
   updateJoinLabQuery,
   getNotieOfRequest,
   insertStudentLabQeury,
+  getUserInfoByUserIdQuery,
 };

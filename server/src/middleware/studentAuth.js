@@ -3,6 +3,8 @@ const jwt = require("jsonwebtoken");
 
 const studentAuth = (req, res, next) => {
   const token = req.cookies.access;
+  // Why undefined?
+  console.log(token);
   try {
     const check = jwt.verify(token, secret_config.jwtsecret);
     if (check.sub !== "student") {

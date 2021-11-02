@@ -98,6 +98,11 @@ exports.joinLab = async (req, res) => {
   const userId = req.userId;
   const labId = req.params.labId;
 
+  const userInfo = await labProvider.getUserInfoByUserId(userId);
+  if (userInfo === undefined) {
+    return res.status(500).send("유저아이디 존재 X 최승용 코드 문제");
+  }
+  console.log(userInfo);
   const joinLabInfo = [userId, labId];
   try {
     const validateData = { userId, labId };
