@@ -25,7 +25,7 @@
 - Frontend: `React.js`
 - Backend: `Node.js` `Express`
 - Database: `Mysql` `AWS RDS`
-- Infra: `Nginx`, `NHN Toast`
+- Infra: `Nginx`, `AWS ec2`
 
 ## 📽️ Screen
 [시연 영상]https://www.youtube.com/watch?v=U7TcgmUL79k
